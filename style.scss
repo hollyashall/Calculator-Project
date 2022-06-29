@@ -1,9 +1,24 @@
 @use "./keys"  as *;
 @use "./display" as *;
 @use "./wholeCalculator" as *;
+@use "./header" as *;
 
 *{
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+
+.main {
+    // height: 80vh;
+    
+    // justify-content: center;
+    // align-items: center;
+    // height: 100%;
+    // width: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
 }
 

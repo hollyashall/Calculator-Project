@@ -5,6 +5,7 @@
   grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(4, 1fr);
   margin: auto;
+  width: 15rem;
   
 }
 
@@ -34,7 +35,7 @@ background-color: orange;
 }
 @media screen and (min-width: 768px) {
   .keys{
-    width: 50%;
+    width: 40%;
     height: 40%;
     margin: auto;
     justify-content: space-evenly;

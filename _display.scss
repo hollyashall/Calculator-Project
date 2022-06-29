@@ -1,7 +1,8 @@
 
 .display{
-  height: 100px;
-  width: 90%;
+  height: 50px;
+  // width: 40%;
+  width: 15rem;
   background-color: black;
   border: none;
   border-radius: 5px;
@@ -9,17 +10,17 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
-  padding: 10px;
-  margin: 20px;
+
   
 }
 
 @media screen and (min-width: 768px) {
   .display{
-    width: 50%;
-    height: 40%;
+    // width: 50%;
+    // height: 60%;
 
-    margin: auto;
+    // margin: auto;
     justify-content: space-evenly;
+    width: 40%;
   }
 }
