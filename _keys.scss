@@ -4,6 +4,29 @@
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(4, 1fr);
+  margin: auto;
+  
+}
+
+.button{
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  gap: 20px;
+  border-radius: 10%;
+  text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background-color: slategray;
+ 
+}
+.button--firstRow{
+  background-color: lightgrey;
+}
+
+.button--finalColumnOrange{
+background-color: orange;
 }
 
 @media screen and (min-width: 768px) {
