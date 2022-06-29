@@ -29,11 +29,13 @@
 background-color: orange;
 }
 
+.button--span2{
+  grid-column: span 2;
+}
 @media screen and (min-width: 768px) {
   .keys{
     width: 50%;
     height: 40%;
-
     margin: auto;
     justify-content: space-evenly;
   }

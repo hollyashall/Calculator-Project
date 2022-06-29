@@ -1,7 +1,9 @@
 @use "./keys"  as *;
 @use "./display" as *;
+@use "./wholeCalculator" as *;
 
 *{
   padding: 0;
   margin: 0;
 }
+

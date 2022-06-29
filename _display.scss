@@ -1,6 +1,6 @@
 
 .display{
-  height: 50px;
+  height: 100px;
   width: 90%;
   background-color: black;
   border: none;
@@ -18,7 +18,8 @@
   .display{
     width: 50%;
     height: 40%;
+
     margin: auto;
     justify-content: space-evenly;
   }
-  }
+}
