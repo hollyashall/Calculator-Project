@@ -6,6 +6,7 @@
   grid-template-columns: repeat(4, 1fr);
   margin: auto;
   width: 15rem;
+  gap: 3px
   
 }
 
@@ -39,5 +40,7 @@ background-color: orange;
     height: 40%;
     margin: auto;
     justify-content: space-evenly;
+    
+    
   }
 }
