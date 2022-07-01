@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="script.js">
+    <script src="./script.js" async defer></script>
     <title>Calculator</title>
   </head>
   <header class="header">
@@ -14,6 +14,7 @@
   <body>
     <main class="wholeCalculator">
       <section class="display">
+        <p id="displayScreen"> numbers</p>
         <div class="display__operation"></div>
       </section>
 
@@ -25,25 +26,25 @@
         <button class="button button--finalColumnOrange">÷</button>
         <!-- this is my second row -->
 
-        <button class="button">7</button>
-        <button class="button">8</button>
-        <button class="button">9</button>
+        <button class="button number" id="button">7</button>
+        <button class="button number">8</button>
+        <button class="button number">9</button>
         <button class="button button--finalColumnOrange">X</button>
         <!-- this is my third row -->
-        <button class="button">4</button>
-        <button class="button">5</button>
-        <button class="button">6</button>
+        <button class="button number">4</button>
+        <button class="button number">5</button>
+        <button class="button number">6</button>
         <button class="button button--finalColumnOrange">-</button>
         <!-- this is my fourth row -->
-        <button class="button">1</button>
-        <button class="button">2</button>
-        <button class="button">3</button>
+        <button class="button number">1</button>
+        <button class="button number">2</button>
+        <button class="button number">3</button>
         <button class="button button--finalColumnOrange">+</button>
         <!-- this is my fifth row -->
 
         <button class="button button--span2">0</button>
         <button class="button">.</button>
-        <button class="button button--finalColumnOrange">=</button>
+        <button class="button button--finalColumnOrange" id="equals">=</button>
       </div>
     </main>
   </body>
