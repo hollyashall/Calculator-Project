@@ -8,7 +8,7 @@ console.dir(calculator)
 
 // STEP 1: first see that button has been pressed ie something happens
   // log something to the console ie the number that has been pressed
-  const Buttons = document.querySelectorAll("button")
+  const Buttons = document.querySelectorAll(".button")
   console.log(Buttons);
   let equationString = ""
   const numberPressed = (event) =>{
@@ -30,9 +30,18 @@ console.dir(calculator)
   const part1= Number(newEquation[0])
   const part2= Number(newEquation[1])
 
-  answer = part1 +part2;
+  answer = part1 + part2;
   console.log(answer)
+
+  const newEquationMinus = equationString.split("-")
+  console.log(newEquationMinus)
+  const part1Minus= Number(newEquationMinus[0])
+  const part2Minus= Number(newEquationMinus[1])
+  answerMinus = part1Minus - part2Minus;
+  console.log(answerMinus);
+
   }
+
 
   Buttons.forEach(button => {
   button.addEventListener("click", numberPressed)
@@ -65,10 +74,10 @@ console.log("operator");
   
   const equals = document.querySelector("#equals")
 
-  const equalsPressed = event =>{
+  const equalsPressed = (event) =>{
  
   Display.innerText= answer;
-
+  Display.innerText= answerMinus;
   // i think here is where I need to put the part in to tell it do do the sum?
 
   }
