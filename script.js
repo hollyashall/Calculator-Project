@@ -45,14 +45,10 @@ console.dir(calculator)
 
   const equalsPressed = event =>{
   console.log("the equals buttton has been pressed, which means need to apply an operator");
+  
 
   // i think here is where I need to put the part in to tell it do do the sum?
 
-  const convertStringToNumber = () =>{
-    const newString = parseFloat(equationString);
-    console.log(newString);
-    return newString;
-  }
 
   }
   equals. addEventListener("click", equalsPressed);
@@ -62,8 +58,18 @@ console.dir(calculator)
   // NOTE: currently a string... will need to convert numbers to type Number
   // conditional statement required to see which operation to perform
 
-// they have finished writing the first number when they have pressed the operator
-// we want to store the number that they have pressed
+  const convertStringToNumber = (event) =>{
+
+    // the event is when equals is pressed?
+    const newString = parseFloat(equationString);
+    console.log(newString);
+    return newString;
+  }
+ 
+
+
+
+
 
 // store the operator
 
