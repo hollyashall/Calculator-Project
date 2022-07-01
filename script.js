@@ -3,7 +3,7 @@ const calculator = document.querySelector(".wholeCalculator");
 console.dir(calculator)
 
 
-
+let answer=0
 
 
 // STEP 1: first see that button has been pressed ie something happens
@@ -22,16 +22,7 @@ console.dir(calculator)
   console.log(equationString)
   
   Display. innerText = equationString
-  const newEquation = equationString.split("+");
-
-  console.log(newEquation);
-//  new section
-
-  const part1= Number(newEquation[0])
-  const part2= Number(newEquation[1])
-
-  answer = part1 + part2;
-  console.log(answer)
+ 
 
   const newEquationMinus = equationString.split("-")
   console.log(newEquationMinus)
@@ -41,7 +32,26 @@ console.dir(calculator)
   console.log(answerMinus);
 
   }
-
+const functionAdd =(event) =>{
+const newEquation = equationString.split("+");
+ console.log(newEquation)
+  let addTest = equationString.search(/[+]/)
+  if (addTest >= 0) {
+    const newEquation = equationString.split("+");
+    console.log(newEquation);
+  //  new section
+  
+    const part1= Number(newEquation[0])
+    const part2= Number(newEquation[1])
+  
+     answer = part1 + part2;
+    
+    console.log(answer)
+    return answer;
+  }
+ 
+}
+  
 
   Buttons.forEach(button => {
   button.addEventListener("click", numberPressed)
@@ -63,8 +73,7 @@ console.dir(calculator)
 const Operator = document.querySelectorAll("operator");
 console.log("operator");
 
- const newEquation = equationString.split("+");
- console.log(newEquation)
+
 
 
 
@@ -75,9 +84,9 @@ console.log("operator");
   const equals = document.querySelector("#equals")
 
   const equalsPressed = (event) =>{
- 
+  functionAdd(event)
   Display.innerText= answer;
-  Display.innerText= answerMinus;
+  // Display.innerText= answerMinus;
   // i think here is where I need to put the part in to tell it do do the sum?
 
   }
