@@ -37,6 +37,12 @@ console.dir(calculator)
   const Display = document.querySelector("#displayScreen");
  
 
+
+// query selector for operator
+// global variable not declared in brackets as need it later
+// console log for operator and variable
+
+
 // STEP 4: equals button event listener
   // store the equals button in a variable
   // addEventListener to that button
