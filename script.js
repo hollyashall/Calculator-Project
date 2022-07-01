@@ -20,7 +20,18 @@ console.dir(calculator)
   // equation string is a global variable, wont get reset when i click
   equationString = equationString + (event.target.innerText)
   console.log(equationString)
+  
   Display. innerText = equationString
+  const newEquation = equationString.split("+");
+
+  console.log(newEquation);
+//  new section
+
+  const part1= Number(newEquation[0])
+  const part2= Number(newEquation[1])
+
+  answer = part1 +part2;
+  console.log(answer)
   }
 
   Buttons.forEach(button => {
@@ -40,15 +51,11 @@ console.dir(calculator)
 // query selector for operator
 // console log for operator and variable
 
-
-let var1=""
-let var 2=""
-
 const Operator = document.querySelectorAll("operator");
-console.log("operator")
+console.log("operator");
 
- 
-
+ const newEquation = equationString.split("+");
+ console.log(newEquation)
 
 
 
@@ -59,8 +66,8 @@ console.log("operator")
   const equals = document.querySelector("#equals")
 
   const equalsPressed = event =>{
-  console.log("the equals buttton has been pressed, which means need to apply an operator");
-  
+ 
+  Display.innerText= answer;
 
   // i think here is where I need to put the part in to tell it do do the sum?
 
