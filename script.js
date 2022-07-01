@@ -6,8 +6,6 @@ console.dir(calculator)
 
 
 
-
-
 // STEP 1: first see that button has been pressed ie something happens
   // log something to the console ie the number that has been pressed
   const Buttons = document.querySelectorAll("button")
@@ -37,10 +35,21 @@ console.dir(calculator)
   const Display = document.querySelector("#displayScreen");
  
 
+// STEP 4: OPERATOR AND SPLIT
 
 // query selector for operator
-// global variable not declared in brackets as need it later
 // console log for operator and variable
+
+
+let var1=""
+let var 2=""
+
+const Operator = document.querySelectorAll("operator");
+console.log("operator")
+
+ 
+
+
 
 
 // STEP 4: equals button event listener
@@ -55,7 +64,6 @@ console.dir(calculator)
 
   // i think here is where I need to put the part in to tell it do do the sum?
 
-
   }
   equals. addEventListener("click", equalsPressed);
 
@@ -64,20 +72,8 @@ console.dir(calculator)
   // NOTE: currently a string... will need to convert numbers to type Number
   // conditional statement required to see which operation to perform
 
-  const convertStringToNumber = (event) =>{
+  
 
-    // the event is when equals is pressed?
-    const newString = parseFloat(equationString);
-    console.log(newString);
-    return newString;
-  }
- 
-
-
-
-
-
-// store the operator
 
 // the next number is the second number, update to the screen the same as the first number
 // store this number 
