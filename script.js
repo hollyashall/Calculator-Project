@@ -21,7 +21,7 @@ let answer=0
 //  using this to modify the elements
   }
 
- 
+//  STEP 2: SEPARATING THE FUNCTINS WITH OPERATORS
 
 const handleEquals = (event) =>{
   let currentOperator = ""
@@ -58,11 +58,17 @@ if (currentOperator == "X") {
 const operators =["+","-","X","/"]
 // loop will check if included in equation string and console.log if so
 
+//-->next part: bidmas
+// Getting calculator to do BIDMAS
+
+//  division multiplication addition subtraction)
+// order of operations
 
 
 
 
 
+// These are the event listeners for pressing on buttons
 
   Buttons.forEach(button => {
   button.addEventListener("click", numberPressed)
@@ -86,7 +92,7 @@ const operators =["+","-","X","/"]
   const equals = document.querySelector("#equals")
 
   const equalsPressed = (event) =>{
-  const answerr = handleEquals(event)
+   answerr = handleEquals(event)
   // return key word stored in anserr
   Display.innerText=answerr
   // HTML element stored in the display
@@ -96,8 +102,6 @@ const operators =["+","-","X","/"]
   equals. addEventListener("click", equalsPressed);
 
 
-
-
 // MAKE THE ALL CLEAR BUTTON
 // when AC is pressed I want to make the display show ""
 
@@ -105,13 +109,11 @@ const reset = document.querySelector("#all-clear")
 
 const handleReset=(event) =>{
   console.log("reset");
-  Display.innerText=""
-
+  Display.innerText= 0;
+  
+  
 }
 reset.addEventListener("click",handleReset)
 
 
-// Getting calculator to do BIDMAS
 
-// Bracket of division multiplication addition subtraction)
-// order of operations
