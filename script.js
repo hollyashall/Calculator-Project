@@ -1,11 +1,6 @@
 
-const calculator = document.querySelector(".wholeCalculator");
-console.dir(calculator)
-
 
 let answer=0
-let answerMinus=0
-let answerDivide=0
 
 // STEP 1: first see that button has been pressed ie something happens
   // log something to the console ie the number that has been pressed
@@ -24,66 +19,51 @@ let answerDivide=0
   
   Display. innerText = equationString
 //  using this to modify the elements
-
-  // const newEquationMinus = equationString.split("-")
-  // console.log(newEquationMinus)
-  // const part1Minus= Number(newEquationMinus[0])
-  // const part2Minus= Number(newEquationMinus[1])
-  // answerMinus = part1Minus - part2Minus;
-  // console.log(answerMinus);
-
   }
 
-const functionAdd =(event) => {
-
-  //  this add test looks for a plus sign, the /[]/ is the syntax to look for a number that is not a digit
-  // if there was no plus sign would return a minus sign which is why when it is bigger than zero use if statement
-  let addTest = equationString.search(/[+]/)
-  if (addTest >= 0) {
-    const newEquation = equationString.split("+");
-    console.log(newEquation);
-    // ^ here this splits the equation string where there is a plus sign
-    //  new section
-    const part1= Number(newEquation[0])
-    const part2= Number(newEquation[1])
-  
-     answer = part1 + part2;
-    
-    console.log(answer)
-    return answer;
-  }
-}
  
-const functionMinus = (event) => {
-  let minusTest = equationString.search(/[-]/)
-  if (minusTest >= 0) {
-    const newEquationMinus = equationString.split("-");
-    console.log(newEquationMinus);
-    const part1Minus= Number(newEquationMinus[0])
-    const part2Minus= Number(newEquationMinus[1])
-    answerMinus = part1Minus - part2Minus;
-  console.log(answerMinus);
-  return answerMinus
+
+const handleEquals = (event) =>{
+  let currentOperator = ""
+  operators.forEach(operator => {
+   
+    if (equationString.includes(operator)){
+      console.log(operator);
+      currentOperator=operator;
+    }
+    // currentOperator lets us take operator out of the loop
+  });
+
+  let calculationArray = equationString.split(currentOperator)
+  console.log(calculationArray);
+
+ if (currentOperator == "+") {
+   const result= Number(calculationArray[0]) + Number(calculationArray[1])
+   return result
+ }
+ if (currentOperator == "-") {
+  const result= Number(calculationArray[0]) - Number(calculationArray[1])
+  return result
+}
+if (currentOperator == "/") {
+  const result= Number(calculationArray[0])/ Number(calculationArray[1])
+  return result
+}
+if (currentOperator == "X") {
+  const result= Number(calculationArray[0]) * Number(calculationArray[1])
+  return result
 }
 }
 
-const functionDivide = (event) =>{
-  let divideTest = equationString.search(/[/]/)
-  if (divideTest >= 0){
-    const newEquationDivide = equation.split("/");
-    console.log(newEquationDivide);
-    const part1Divide=Number(newEquationDivide[0])
-    const part2Divide=Number(newEquationDivide[1])
-    answerDivide =part1Divide/part2Divide;
-    console.log(answerDivide);
-    return answerDivide
-  }
-}
+const operators =["+","-","X","/"]
+// loop will check if included in equation string and console.log if so
 
 
 
 
-  
+
+
+
   Buttons.forEach(button => {
   button.addEventListener("click", numberPressed)
 
@@ -94,7 +74,9 @@ const functionDivide = (event) =>{
   // need to update the HTML
 
   const Display = document.querySelector("#displayScreen");
- 
+//  storing this in the Display which is an object - property and method
+// we interact with the inner display property
+// the innerText property is displayed on the screen
 
 
 // STEP 4: equals button event listener
@@ -104,10 +86,10 @@ const functionDivide = (event) =>{
   const equals = document.querySelector("#equals")
 
   const equalsPressed = (event) =>{
-  functionAdd(event)
-  Display.innerText= answer;
-  functionMinus(event)
-   Display.innerText=answerMinus;
+  const answerr = handleEquals(event)
+  // return key word stored in anserr
+  Display.innerText=answerr
+  // HTML element stored in the display
 
   }
 
@@ -116,16 +98,13 @@ const functionDivide = (event) =>{
 
 
 
+// MAKE THE ALL CLEAR BUTTON
+
+const reset = document.querySelector("#all-clear")
+const resetPressed =(event) =>{
+  console.log("reset")
+  Display.innerText=""
+}
+resetPressed.addEventListener("click", reset)
 
 
-
-// STEP 5: 
-  // evaluate equationString
-  // NOTE: currently a string... will need to convert numbers to type Number
-  // conditional statement required to see which operation to perform
-
-// the next number is the second number, update to the screen the same as the first number
-// store this number 
-
-// when equals is pressed apply the operator
-// use the operator to apply the function
