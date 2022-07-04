@@ -4,7 +4,8 @@ console.dir(calculator)
 
 
 let answer=0
-
+let answerMinus=0
+let answerDivide=0
 
 // STEP 1: first see that button has been pressed ie something happens
   // log something to the console ie the number that has been pressed
@@ -22,25 +23,27 @@ let answer=0
   console.log(equationString)
   
   Display. innerText = equationString
- 
+//  using this to modify the elements
 
-  const newEquationMinus = equationString.split("-")
-  console.log(newEquationMinus)
-  const part1Minus= Number(newEquationMinus[0])
-  const part2Minus= Number(newEquationMinus[1])
-  answerMinus = part1Minus - part2Minus;
-  console.log(answerMinus);
+  // const newEquationMinus = equationString.split("-")
+  // console.log(newEquationMinus)
+  // const part1Minus= Number(newEquationMinus[0])
+  // const part2Minus= Number(newEquationMinus[1])
+  // answerMinus = part1Minus - part2Minus;
+  // console.log(answerMinus);
 
   }
-const functionAdd =(event) =>{
-const newEquation = equationString.split("+");
- console.log(newEquation)
+
+const functionAdd =(event) => {
+
+  //  this add test looks for a plus sign, the /[]/ is the syntax to look for a number that is not a digit
+  // if there was no plus sign would return a minus sign which is why when it is bigger than zero use if statement
   let addTest = equationString.search(/[+]/)
   if (addTest >= 0) {
     const newEquation = equationString.split("+");
     console.log(newEquation);
-  //  new section
-  
+    // ^ here this splits the equation string where there is a plus sign
+    //  new section
     const part1= Number(newEquation[0])
     const part2= Number(newEquation[1])
   
@@ -49,10 +52,38 @@ const newEquation = equationString.split("+");
     console.log(answer)
     return answer;
   }
- 
 }
-  
+ 
+const functionMinus = (event) => {
+  let minusTest = equationString.search(/[-]/)
+  if (minusTest >= 0) {
+    const newEquationMinus = equationString.split("-");
+    console.log(newEquationMinus);
+    const part1Minus= Number(newEquationMinus[0])
+    const part2Minus= Number(newEquationMinus[1])
+    answerMinus = part1Minus - part2Minus;
+  console.log(answerMinus);
+  return answerMinus
+}
+}
 
+const functionDivide = (event) =>{
+  let divideTest = equationString.search(/[/]/)
+  if (divideTest >= 0){
+    const newEquationDivide = equation.split("/");
+    console.log(newEquationDivide);
+    const part1Divide=Number(newEquationDivide[0])
+    const part2Divide=Number(newEquationDivide[1])
+    answerDivide =part1Divide/part2Divide;
+    console.log(answerDivide);
+    return answerDivide
+  }
+}
+
+
+
+
+  
   Buttons.forEach(button => {
   button.addEventListener("click", numberPressed)
 
@@ -65,17 +96,6 @@ const newEquation = equationString.split("+");
   const Display = document.querySelector("#displayScreen");
  
 
-// STEP 4: OPERATOR AND SPLIT
-
-// query selector for operator
-// console log for operator and variable
-
-const Operator = document.querySelectorAll("operator");
-console.log("operator");
-
-
-
-
 
 // STEP 4: equals button event listener
   // store the equals button in a variable
@@ -86,24 +106,26 @@ console.log("operator");
   const equalsPressed = (event) =>{
   functionAdd(event)
   Display.innerText= answer;
-  // Display.innerText= answerMinus;
-  // i think here is where I need to put the part in to tell it do do the sum?
+  functionMinus(event)
+   Display.innerText=answerMinus;
 
   }
+
   equals. addEventListener("click", equalsPressed);
+
+
+
+
+
+
 
 // STEP 5: 
   // evaluate equationString
   // NOTE: currently a string... will need to convert numbers to type Number
   // conditional statement required to see which operation to perform
 
-  
-
-
 // the next number is the second number, update to the screen the same as the first number
 // store this number 
 
 // when equals is pressed apply the operator
 // use the operator to apply the function
-
-// log the value and display on the screen 
