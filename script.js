@@ -99,12 +99,19 @@ const operators =["+","-","X","/"]
 
 
 // MAKE THE ALL CLEAR BUTTON
+// when AC is pressed I want to make the display show ""
 
 const reset = document.querySelector("#all-clear")
-const resetPressed =(event) =>{
-  console.log("reset")
+
+const handleReset=(event) =>{
+  console.log("reset");
   Display.innerText=""
+
 }
-resetPressed.addEventListener("click", reset)
+reset.addEventListener("click",handleReset)
 
 
+// Getting calculator to do BIDMAS
+
+// Bracket of division multiplication addition subtraction)
+// order of operations
