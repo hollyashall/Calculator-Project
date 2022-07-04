@@ -37,6 +37,10 @@ const handleEquals = (event) =>{
   let calculationArray = equationString.split(currentOperator)
   console.log(calculationArray);
 
+//need to store all the operators that exist within an array
+// const operatorCalcArray
+
+
  if (currentOperator == "+") {
    const result= Number(calculationArray[0]) + Number(calculationArray[1])
    return result
@@ -58,11 +62,23 @@ if (currentOperator == "X") {
 const operators =["+","-","X","/"]
 // loop will check if included in equation string and console.log if so
 
-//-->next part: bidmas
-// Getting calculator to do BIDMAS
+//-->next part: 
 
 //  division multiplication addition subtraction)
 // order of operations
+
+// we want to be able to also do 233 + 44 - 100 * 9 etc
+//need to alter the loop to achieve this
+// currently you are storing a single operator for each calculation
+// instead you will need to store all the operators that exist in the equationString 
+// (in an array?)
+//  you can then use the first operator in the array for the 1st and 2nd nums, 
+//  then use whatever this 
+//  number is with the second operator and the third number and so on
+
+
+
+
 
 
 
@@ -108,10 +124,9 @@ const operators =["+","-","X","/"]
 const reset = document.querySelector("#all-clear")
 
 const handleReset=(event) =>{
-  console.log("reset");
+  equationString=""
   Display.innerText= 0;
-  
-  
+  console.log(answer, equationString);
 }
 reset.addEventListener("click",handleReset)
 
