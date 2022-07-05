@@ -20,7 +20,24 @@ let answer=0
   // this is grabbing what has been clicked on
   // the inner text gets text from the button
   console.log(event.target.innerText);
-  if (event.target.innerText === "+")  {
+
+  //If statement that checks if the user just pressed an operator 
+  if (event.target.innerText === "+" || event.target.innerText === "/" || event.target.innerText === "-" || event.target.innerText === "X")  {
+    //Set the currentOperator = to what the user just pressed 
+    
+    //If there is an operator that exists already
+    //Then the user wants to chain an operation 
+    //run the handleEquals 
+
+   if (currentOperator){
+     console.log(handleEquals());
+     Display.innerHTML=`${handleEquals()}`
+   }
+   
+  
+    //So we can chain the new operator onto the result 
+    //e.g 3 + 3 THEN * 2 
+    // 6 -> currentOperator = * 
     currentOperator=event.target.innerText
     console.log(currentOperator);
   }
@@ -49,21 +66,21 @@ let answer=0
 let currentOperator = ""
 const handleEquals = (event) =>{
   
-  operators.forEach(operator => {
+  // operators.forEach(operator => {
    
-    if (equationString.includes(operator)){
-      console.log(operator);
-      // currentOperator=operator;
-    }
-    // currentOperator lets us take operator out of the loop
-  });
+  //   if (equationString.includes(operator)){
+  //     console.log(operator);
+  //     // currentOperator=operator;
+  //   }
+  //   // currentOperator lets us take operator out of the loop
+  // });
 
   let calculationArray = equationString.split(currentOperator)
   console.log(calculationArray);
 
   //need to store all the operators that exist within an array
   // const operatorCalcArray
-
+console.log(currentOperator);
 
  if (currentOperator == "+") {
    const result= Number(calculationArray[0]) + Number(calculationArray[1])
