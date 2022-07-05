@@ -1,10 +1,18 @@
 
 
+//GLOBAL VARIABLES
+const Buttons = document.querySelectorAll(".button")
+const Display = document.querySelector("#displayScreen");
+const equals = document.querySelector("#equals")
+const reset = document.querySelector("#all-clear")
 let answer=0
 
-// STEP 1: first see that button has been pressed ie something happens
+
+//EVENT LISTENER FOR BUTTON PRESS
+
+  // see that button has been pressed ie something happens
   // log something to the console ie the number that has been pressed
-  const Buttons = document.querySelectorAll(".button")
+  
   console.log(Buttons);
   let equationString = ""
   const numberPressed = (event) =>{
@@ -12,7 +20,11 @@ let answer=0
   // this is grabbing what has been clicked on
   // the inner text gets text from the button
   console.log(event.target.innerText);
-// STEP 2: string together each of the numbers
+  if (event.target.innerText === "+")  {
+    currentOperator=event.target.innerText
+    console.log(currentOperator);
+  }
+  // string together each of the numbers
   // equation string is a global variable, wont get reset when i click
   equationString = equationString + (event.target.innerText)
   console.log(equationString)
@@ -21,15 +33,27 @@ let answer=0
 //  using this to modify the elements
   }
 
-//  STEP 2: SEPARATING THE FUNCTINS WITH OPERATORS
 
+// SHOW NUMBER ON THE DISPLAY
+  // need to use a query selector
+  // need to update the HTML
+
+
+  //  storing this in the Display which is an object - property and method
+  // we interact with the inner display property
+  // the innerText property is displayed on the screen
+
+
+
+//SEPARATING THE FUNCTOINS WITH OPERATORS
+let currentOperator = ""
 const handleEquals = (event) =>{
-  let currentOperator = ""
+  
   operators.forEach(operator => {
    
     if (equationString.includes(operator)){
       console.log(operator);
-      currentOperator=operator;
+      // currentOperator=operator;
     }
     // currentOperator lets us take operator out of the loop
   });
@@ -37,8 +61,8 @@ const handleEquals = (event) =>{
   let calculationArray = equationString.split(currentOperator)
   console.log(calculationArray);
 
-//need to store all the operators that exist within an array
-// const operatorCalcArray
+  //need to store all the operators that exist within an array
+  // const operatorCalcArray
 
 
  if (currentOperator == "+") {
@@ -67,45 +91,28 @@ const operators =["+","-","X","/"]
 //  division multiplication addition subtraction)
 // order of operations
 
-// we want to be able to also do 233 + 44 - 100 * 9 etc
+// want to be able to also do 233 + 44 - 100 * 9 etc
 //need to alter the loop to achieve this
-// currently you are storing a single operator for each calculation
-// instead you will need to store all the operators that exist in the equationString 
+// currently storing a single operator for each calculation
+// need to store all the operators that exist in the equationString 
 // (in an array?)
-//  you can then use the first operator in the array for the 1st and 2nd nums, 
-//  then use whatever this 
-//  number is with the second operator and the third number and so on
+//  use the first operator in the array for the 1st and 2nd nums, 
+//  then use the second operator and the third number and so on
 
 
 
-
-
-
-
-
-
-// These are the event listeners for pressing on buttons
+//Event listeners for pressing on buttons
 
   Buttons.forEach(button => {
   button.addEventListener("click", numberPressed)
 
   });
 
-// STEP 3: SHOW NUMBER ON THE DISPLAY
-  // need to use a query selector
-  // need to update the HTML
 
-  const Display = document.querySelector("#displayScreen");
-//  storing this in the Display which is an object - property and method
-// we interact with the inner display property
-// the innerText property is displayed on the screen
-
-
-// STEP 4: equals button event listener
+//EQUALS BUTTON
+  // STEP 4: equals button event listener
   // store the equals button in a variable
   // addEventListener to that button
-  
-  const equals = document.querySelector("#equals")
 
   const equalsPressed = (event) =>{
    answerr = handleEquals(event)
@@ -118,10 +125,8 @@ const operators =["+","-","X","/"]
   equals. addEventListener("click", equalsPressed);
 
 
-// MAKE THE ALL CLEAR BUTTON
-// when AC is pressed I want to make the display show ""
-
-const reset = document.querySelector("#all-clear")
+//ALL CLEAR BUTTON (reset)
+  // when AC is pressed I want to make the display show ""
 
 const handleReset=(event) =>{
   equationString=""
