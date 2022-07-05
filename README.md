@@ -3,9 +3,12 @@
 HTML and SCSS:
 
 - started with the mobile first design
+- made the desktop design bigger with bigger screen
 - used BEM naming conventions
 - split the calculator into two main sections; the display and the keys
 - aimed to make the calculator as user friendly as possible
+
+Screenshot 2022-07-05 at 16.50.15.png
 
 JavaScript:
 
