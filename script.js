@@ -6,6 +6,7 @@ const Buttons = document.querySelectorAll(".button")
 const Display = document.querySelector("#displayScreen");
 const equals = document.querySelector("#equals")
 const reset = document.querySelector("#all-clear")
+const negButton = document.querySelector("#negative")
 let answer=0
 
 
@@ -48,8 +49,19 @@ let answer=0
   console.log(equationString)
   
   Display. innerText = equationString
-//  using this to modify the elements
+
+  const handleNegative = (event) =>{
+    if(equationString.startsWith("-")){
+      equationString.value = equationString.value.substring(1)
+    } else {
+      equationString.value = `-${equationString}`
+    }
+    negButton.addEventListener("click", handleNegative)
+    }
   }
+  
+//  using this to modify the elements
+  
 
 
 // SHOW NUMBER ON THE DISPLAY
@@ -152,7 +164,6 @@ const handleReset=(event) =>{
   console.log(answer, equationString);
 }
 reset.addEventListener("click",handleReset)
-
 
 
 
